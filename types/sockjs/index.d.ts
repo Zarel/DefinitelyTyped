@@ -16,6 +16,12 @@ export interface ServerOptions {
 	log?(severity: string, message: string): void;
 	heartbeat_delay?: number;
 	disconnect_delay?: number;
+    faye_server_options?: {
+        extensions?: any[];
+        headers?: {[header: string]: string};
+        maxLength?: number;
+        ping?: number;
+    };
 }
 
 export function createServer(options?: ServerOptions): Server;
